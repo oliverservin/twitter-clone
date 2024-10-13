@@ -1,0 +1,12 @@
+@props(['user', 'hasBorder' => false, 'large' => false])
+
+<span
+    @class([
+        'relative z-10 block rounded-full transition hover:opacity-90',
+        'border-4 border-black' => $hasBorder,
+        'size-32' => $large,
+        'size-12' => ! $large,
+    ])
+>
+    <img class="rounded-full object-cover" alt="Avatar" src="/images/placeholder.png" />
+</span>
