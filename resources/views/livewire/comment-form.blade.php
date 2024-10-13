@@ -2,21 +2,22 @@
 
 use Illuminate\Support\Facades\Auth;
 
-use function Livewire\Volt\rules;
-use function Livewire\Volt\state;
+use function Livewire\Volt\{rules, state};
 
-state('body');
+state(['post', 'body']);
 
 rules(['body' => 'required|min:3']);
 
 $save = function () {
     $this->validate();
 
-    Auth::user()->posts()->create([
+
+    $this->post->comments()->create([
+        'user_id' => Auth::user()->id,
         'body' => $this->body,
     ]);
 
-    $this->dispatch('post-created');
+    $this->dispatch('comment-created');
 
     $this->body = '';
 };
@@ -33,7 +34,7 @@ $save = function () {
                 <textarea
                     wire:model="body"
                     class="peer mt-3 w-full resize-none border-0 bg-black p-0 text-[20px] text-white placeholder-neutral-500 outline-none ring-0 focus:ring-0 disabled:opacity-80"
-                    placeholder="¿Que estas pensando?"
+                    placeholder="Publicar comentario"
                 ></textarea>
                 <hr class="h-[1px] w-full border-neutral-800 opacity-0 transition peer-focus:opacity-100" />
                 <div class="mt-4 flex flex-row justify-end">
