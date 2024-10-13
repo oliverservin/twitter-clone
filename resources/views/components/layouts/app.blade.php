@@ -24,5 +24,7 @@
                 </div>
             </div>
         </div>
+        <livewire:register-modal />
+        <livewire:login-modal />
     </body>
 </html>
