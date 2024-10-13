@@ -1,19 +1,19 @@
-# X/Twitter Clone with Laravel, Livewire, and TailwindCSS
+# Clon de X/Twitter con Laravel, Livewire y TailwindCSS
 
-This is the repository for a Twitter clone tutorial using Laravel, Livewire, and TailwindCSS.
+Este es el repositorio para un tutorial de clon de X/Twitter  usando Laravel, Livewire y TailwindCSS.
 
 ## Instalación
 
-This project is a standard Laravel application; it is based on Laravel 11 and uses Livewire and Tailwind CSS for the frontend. If you are familiar with Laravel, you should feel comfortable working on this project.
+Este proyecto es una aplicación Laravel regular; se basa en Laravel 11 y utiliza Livewire y Tailwind CSS para el frontend. Si estás familiarizado con Laravel, deberías sentirte cómodo trabajando en este proyecto.
 
-For local development, you can use the following requirements:
+En lo que respecta al desarrollo local, puedes usar los siguientes requisitos:
 
-- PHP 8.3 with SQLite, GD, and other common extensions.
-- Node.js 16 or later.
+- PHP 8.3 - con SQLite, GD y otras extensiones comunes.
+- Node.js 16 o más reciente.
 
-If you meet these requirements, you can start by cloning the repository and installing the dependencies.
+Si tienes estos requisitos, puedes empezar clonando el repositorio y instalando las dependencias.
 
-Using [Composer](https://getcomposer.org) and [NPM](https://www.npmjs.com):
+Usando [Composer](https://getcomposer.org) y [NPM](https://www.npmjs.com):
 
 ```bash
 composer install
@@ -21,7 +21,7 @@ composer install
 npm install
 ```
 
-After that, set up your `.env` file:
+Después de eso, configura tu archivo `.env`:
 
 ```bash
 cp .env.example .env
@@ -29,7 +29,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-Set up your database and run the migrations:
+Configura tu base de datos y ejecuta las migraciones:
 
 ```bash
 touch database/database.sqlite
@@ -37,19 +37,19 @@ touch database/database.sqlite
 php artisan migrate
 ```
 
-Link the storage to the public folder.
+Enlaza el almacenamiento a la carpeta pública:
 
 ```bash
 php artisan storage:link
 ```
 
-In a **separate terminal**, build the assets in watch mode:
+En un **terminal separado**, construye los activos en modo watch:
 
 ```bash
 npm run dev
 ```
 
-Finally, start the development server:
+Finalmente, inicia el servidor de desarrollo:
 
 ```bash
 php artisan serve
