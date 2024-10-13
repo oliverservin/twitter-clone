@@ -19,16 +19,18 @@ on(['comment-created' => $getComments]);
             <x-avatar :user="$comment->user" />
             <div>
                 <div class="flex flex-row items-center gap-2">
-                    <span
+                    <a
+                        href="{{ route('users.show', ['user' => $comment->user]) }}" wire:navigate
                         class="relative z-10 font-semibold text-white hover:underline"
                     >
                         {{ $comment->user->name }}
-                    </span>
-                    <span
+                    </a>
+                    <a
+                        href="{{ route('users.show', ['user' => $comment->user]) }}" wire:navigate
                         class="relative z-10 hidden text-neutral-500 hover:underline md:block"
                     >
                         {{ $comment->user->username }}
-                    </span>
+                    </a>
                     <span class="text-sm text-neutral-500">
                         {{ $comment->created_at->diffForHumans() }}
                     </span>
