@@ -1,6 +1,7 @@
 @props(['user', 'hasBorder' => false, 'large' => false])
 
-<span
+<a
+    href="{{ route('users.show', ['user' => $user]) }}" wire:navigate
     @class([
         'relative z-10 block rounded-full transition hover:opacity-90',
         'border-4 border-black' => $hasBorder,
@@ -9,4 +10,4 @@
     ])
 >
     <img class="rounded-full object-cover" alt="Avatar" src="/images/placeholder.png" />
-</span>
+</a>

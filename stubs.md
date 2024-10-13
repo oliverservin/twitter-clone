@@ -1,0 +1,89 @@
+## Mostrar posts por usuario
+
+- User hero
+
+  ```html
+  <div>
+      <div class="relative h-44 bg-neutral-700">
+          <div class="absolute -bottom-16 left-4">
+              <!-- Avatar grande con borde -->
+          </div>
+      </div>
+  </div>
+  ```
+- User bio
+
+  ```html
+  <div class="border-b-[1px] border-neutral-800 pb-4">
+      <div class="mt-8 px-4">
+          <div class="flex flex-col">
+              <p class="text-2xl font-semibold text-white">
+                  <!-- Nombre del usuario -->
+              </p>
+              <p class="text-base text-neutral-500">
+                  <!-- @username -->
+              </p>
+          </div>
+          <div class="mt-4 flex flex-col">
+              <div class="mt-4 flex flex-row items-center gap-2 text-neutral-500">
+                  <!-- icono de calendario -->
+                  <p>
+                      <!-- Se unió en [fecha con iso format MMMM de YYYY] -->
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+  ```
+- Icono de calendario
+
+  ```html
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path
+          fill-rule="evenodd"
+          d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
+          clip-rule="evenodd"
+      />
+  </svg>
+  ```
+
+## Likes
+
+- Botón para likear
+
+  ```html
+  <button
+      class="relative z-10 flex flex-row items-center gap-2 text-neutral-500 transition hover:text-red-500"
+  >
+      <!-- icono de heart -->
+      <p>
+          <!-- Conteo de likes -->
+      </p>
+  </button>
+  ```
+- Icono `heart-outline` de Heroicons
+
+  ```html
+  <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+  >
+      <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+      />
+  </svg>
+  ```
+- Icono `heart-solid` de Heroicons
+
+  ```html
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path
+          d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"
+      />
+  </svg>
+  ```
