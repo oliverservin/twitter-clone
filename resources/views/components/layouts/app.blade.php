@@ -10,7 +10,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="h-full font-sans text-white antialiased">
+    <body class="h-full bg-black font-sans text-white antialiased">
         <div class="h-screen bg-black">
             <div class="xl:px-30 container mx-auto h-full max-w-6xl">
                 <div class="grid h-full grid-cols-4">
@@ -20,6 +20,7 @@
                     <div class="col-span-3 border-x-[1px] border-neutral-800 lg:col-span-2">{{ $slot }}</div>
                     <div>
                         <!-- Seguir cuentas -->
+                        <livewire:follow-bar />
                     </div>
                 </div>
             </div>
