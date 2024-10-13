@@ -2,6 +2,8 @@
 
 This is the repository for a Twitter clone tutorial using Laravel, Livewire, and TailwindCSS.
 
+[**Documentación en Español**](./README.es.md)
+
 ## Installation
 
 This project is a standard Laravel application; it is based on Laravel 11 and uses Livewire and Tailwind CSS for the frontend. If you are familiar with Laravel, you should feel comfortable working on this project.
