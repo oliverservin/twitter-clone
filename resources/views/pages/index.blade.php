@@ -15,5 +15,8 @@ name('home');
                 <x-button type="button" @click="$dispatch('show-register-modal')" secondary>Registrarse</x-button>
             </div>
         </div>
+    @else
+        <livewire:post-form />
+        <livewire:post-list />
     @endguest
 </x-layouts.app>
