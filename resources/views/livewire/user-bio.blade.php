@@ -1,30 +1,46 @@
 <?php
 
 use App\Models\User;
+use Livewire\WithFileUploads;
 
 use function Livewire\Volt\rules;
 use function Livewire\Volt\state;
+use function Livewire\Volt\uses;
 
 $getIsFollowing = function () {
     return $this->isFollowing = auth()->user()?->following->contains($this->user);
 };
+
+uses(WithFileUploads::class);
 
 state([
     'user',
     'name' => auth()->user()?->name,
     'username' => auth()->user()?->username,
     'bio' => auth()->user()?->bio,
-    'isFollowing' => $getIsFollowing
+    'isFollowing' => $getIsFollowing,
+    'cover',
+    'photo',
 ]);
 
 rules(fn () => [
     'name' => ['required'],
     'username' => ['required', 'unique:users,username,'.auth()->user()?->id],
     'bio' => ['nullable'],
+    'cover' => ['nullable', 'image', 'max:2048'],
+    'photo' => ['nullable', 'image', 'max:2048'],
 ]);
 
 $updateUser = function () {
     $this->validate();
+
+    if ($this->photo) {
+        auth()->user()->updateProfilePhoto($this->photo);
+    }
+
+    if ($this->cover) {
+        auth()->user()->updateCoverPhoto($this->cover);
+    }
 
     auth()->user()->update([
         'name' => $this->name,
@@ -101,6 +117,78 @@ $toggleFollow = function (User $user) {
                         </button>
                     </div>
                     <div class="mt-20 flex flex-col gap-4">
+                        <div x-data="{ coverPreview: null }">
+                            <input
+                                wire:model="cover"
+                                type="file"
+                                id="cover"
+                                x-ref="cover"
+                                x-on:change="
+                                    const reader = new FileReader()
+                                    reader.onload = (e) => {
+                                        coverPreview = e.target.result
+                                    }
+                                    reader.readAsDataURL($refs.cover.files[0])
+                                "
+                                class="hidden"
+                            />
+
+                            <div class="space-y-2">
+                                <div class="relative h-44 overflow-hidden rounded-lg bg-neutral-700">
+                                    @if ($user->cover_photo_url)
+                                        <img
+                                            x-show="!coverPreview"
+                                            src="{{ $user->cover_photo_url }}"
+                                            class="h-full w-full bg-center bg-no-repeat object-cover"
+                                        />
+                                    @endif
+                                    <span
+                                        x-show="coverPreview"
+                                        class="block h-full w-full bg-cover bg-center bg-no-repeat"
+                                        x-bind:style="'background-image: url(' + coverPreview + ')'"
+                                    ></span>
+                                </div>
+                                <div class="text-right">
+                                    <x-button secondary type="button" @click="$refs.cover.click()">
+                                        Seleccionar foto nueva
+                                    </x-button>
+                                </div>
+                            </div>
+                        </div>
+                        <div x-data="{ photoPreview: null }">
+                            <input
+                                wire:model="photo"
+                                type="file"
+                                id="photo"
+                                class="hidden"
+                                x-ref="photo"
+                                x-on:change="
+                                    const reader = new FileReader()
+                                    reader.onload = (e) => {
+                                        photoPreview = e.target.result
+                                    }
+                                    reader.readAsDataURL($refs.photo.files[0])
+                                "
+                            />
+
+                            <div class="flex items-center justify-between gap-2">
+                                <div>
+                                    <img
+                                        x-show="!photoPreview"
+                                        src="{{ $user->profile_photo_url }}"
+                                        class="h-20 w-20 rounded-full object-cover"
+                                    />
+                                    <span
+                                        x-show="photoPreview"
+                                        class="block h-20 w-20 rounded-full bg-neutral-700 bg-cover bg-center bg-no-repeat"
+                                        x-bind:style="'background-image: url(' + photoPreview + ')'"
+                                    ></span>
+                                </div>
+                                <x-button secondary type="button" @click="$refs.photo.click()">
+                                    Seleccionar foto nueva
+                                </x-button>
+                            </div>
+                        </div>
                         <x-input wire:model="name" placeholder="Nombre" />
                         <x-input wire:model="username" placeholder="Nombre de usuario" />
                         <x-input wire:model="bio" placeholder="Biografía" />
