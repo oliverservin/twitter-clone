@@ -1,3 +1,81 @@
+## Editar perfil
+
+- Modal de editar perfil
+
+  ```html
+  <div>
+      <div x-cloak x-transition.opacity x-show="showEditModal" class="fixed inset-0 z-50 bg-neutral-800/70"></div>
+      <div x-cloak x-transition x-show="showEditModal" class="fixed inset-0 z-50 flex items-center">
+          <div @click.away="showEditModal = false" class="mx-auto w-full max-w-lg rounded-lg bg-black p-10">
+              Formulario
+          </div>
+      </div>
+  </div>
+  ```
+
+- Formulario de editar perfil
+
+  ```html
+  <form>
+      <div class="flex items-center justify-between">
+          <h3 class="text-3xl font-semibold text-white">Edita tu perfil</h3>
+          <button type="button" class="p-1 hover:opacity-70">
+              <!-- Icono de cerrar -->
+          </button>
+      </div>
+      <div class="mt-20 flex flex-col gap-4">
+          <!-- input para el nombre -->
+          <!-- input para el nombre de usuario -->
+      </div>
+      <div class="mt-20">
+          <button>Guardar</button>
+      </div>
+  </form>
+  ```
+
+## Seguir usuarios
+
+- Botón para seguir un usuario
+
+  ```html filename=resources/views/components/user-bio.blade.ph
+  <div class="flex justify-end p-2">
+      <button>Seguir</button>
+  </div>
+  ```
+- Sección de siguiendo y seguidores
+
+  ```html
+  <div class="mt-4 flex flex-row items-center gap-6">
+      <div class="flex flex-row items-center gap-1">
+          <p class="text-white">0</p>
+          <p class="text-neutral-500">Siguiendo</p>
+      </div>
+      <div class="flex flex-row items-center gap-1">
+          <p class="text-white">0</p>
+          <p class="text-neutral-500">Seguidores</p>
+      </div>
+  </div>
+  ```
+- Follow bar
+
+  ```html
+  <div class="hidden px-6 py-4 lg:block">
+      <div class="rounded-xl bg-neutral-800 p-4">
+          <h2 class="text-xl font-semibold text-white">A quién seguir</h2>
+          <div class="mt-4 flex flex-col gap-6">
+            <div class="flex flex-row gap-4">
+                <!-- avatar -->
+                <div class="flex flex-col">
+                    <p class="text-sm font-semibold text-white">Nombre del usuario</p>
+                    <p class="text-sm text-neutral-400">@username</p>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  ```
+
+
 ## Mostrar posts por usuario
 
 - User hero
