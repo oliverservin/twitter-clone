@@ -1,3 +1,70 @@
+- Input foto de portada
+
+  ```html
+  <div>
+      <input
+          type="file"
+          id="cover"
+          class="hidden"
+      />
+
+      <div class="space-y-2">
+          <div class="relative h-44 overflow-hidden rounded-lg bg-neutral-700">
+              <!-- Previsualizar portada -->
+              <span
+                  class="block h-full w-full bg-cover bg-center bg-no-repeat"
+              ></span>
+          </div>
+          <div class="text-right">
+              <x-button secondary type="button">
+                  Seleccionar foto nueva
+              </x-button>
+          </div>
+      </div>
+  </div>
+  ```
+- Input foto de perfil
+
+  ```html
+  <div>
+      <input
+          type="file"
+          id="photo"
+          class="hidden"
+      />
+
+      <div class="flex items-center justify-between gap-2">
+          <div>
+              <span
+                  class="block h-20 w-20 rounded-full bg-neutral-700 bg-cover bg-center bg-no-repeat"
+              ></span>
+          </div>
+          <x-button secondary type="button">
+              Seleccionar foto nueva
+          </x-button>
+      </div>
+  </div>
+  ```
+- Foto de portada en `user-hero`
+
+  ```html
+  <img src="" class="h-full w-full object-cover" />
+  ```
+- Foto de portada en modal
+
+  ```html
+  <img
+      class="h-full w-full bg-center bg-no-repeat object-cover"
+  />
+  ```
+- Foto de portada en modal
+
+  ```html
+  <img
+      class="h-20 w-20 rounded-full object-cover"
+  />
+  ```
+
 ## Editar perfil
 
 - Modal de editar perfil

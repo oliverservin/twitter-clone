@@ -9,5 +9,5 @@
         'size-12' => ! $large,
     ])
 >
-    <img class="rounded-full object-cover" alt="Avatar" src="/images/placeholder.png" />
+    <img class="rounded-full object-cover" alt="Avatar" src="{{ $user->profile_photo_url }}" />
 </a>
