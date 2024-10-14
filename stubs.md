@@ -12,6 +12,7 @@
       <template>
           <div role="alert" class="flex gap-1.5 rounded-lg bg-sky-500 px-4 py-3 text-white">
               <!-- Icono de check -->
+              <!-- Texto de la notificación -->
           </div>
       </template>
   </div>
