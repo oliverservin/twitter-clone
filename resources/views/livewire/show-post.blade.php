@@ -8,6 +8,8 @@ state(['post']);
 
 $toggleLike = function (Post $post) {
     auth()->user()->likedPosts()->toggle($post);
+
+    $this->dispatch('toast', message: 'Éxito');
 }
 
 ?>

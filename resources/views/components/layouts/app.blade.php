@@ -8,6 +8,8 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Scripts -->
+        <script defer src="https://unpkg.com/alpinejs-notify@latest/dist/notifications.min.js"></script>
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="h-full bg-black font-sans text-white antialiased">
@@ -27,5 +29,7 @@
         </div>
         <livewire:register-modal />
         <livewire:login-modal />
+
+        <x-toast />
     </body>
 </html>

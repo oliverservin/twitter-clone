@@ -48,6 +48,8 @@ $updateUser = function () {
         'bio' => $this->bio,
     ]);
 
+    session()->flash('toast', 'Actualizado');
+
     $this->redirect(route('users.show', ['user' => auth()->user()]), navigate: true);
 };
 
@@ -55,6 +57,8 @@ $toggleFollow = function (User $user) {
     auth()->user()->following()->toggle($user);
 
     $this->getIsFollowing();
+
+    $this->dispatch('toast', message: 'Éxito');
 };
 
 ?>
