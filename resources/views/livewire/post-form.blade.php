@@ -19,6 +19,8 @@ $save = function () {
     $this->dispatch('post-created');
 
     $this->body = '';
+
+    $this->dispatch('toast', message: 'Publicación enviada');
 };
 
 ?>

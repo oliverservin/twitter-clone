@@ -20,6 +20,8 @@ $save = function () {
     $this->dispatch('comment-created');
 
     $this->body = '';
+
+    $this->dispatch('toast', message: 'Comentario enviado');
 };
 
 ?>

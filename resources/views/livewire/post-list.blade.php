@@ -21,6 +21,8 @@ $toggleLike = function (Post $post) {
     auth()->user()->likedPosts()->toggle($post);
 
     $this->getPosts();
+
+    $this->dispatch('toast', message: 'Éxito');
 }
 
 ?>
