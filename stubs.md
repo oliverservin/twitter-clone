@@ -1,3 +1,131 @@
+- Componente `sidebar`
+
+  ```html
+  <div class="col-span-1 h-full pr-4 md:pr-6">
+      <div class="flex flex-col items-end">
+          <div class="space-y-2 lg:w-[230px]">
+              <a
+                  href="#"
+                  class="flex h-14 w-14 items-center justify-center rounded-full p-4 hover:bg-blue-300 hover:bg-opacity-10"
+              >
+                  <!-- logo size 7 -->
+                  Logo
+              </a>
+
+              <a href="#" class="flex flex-row items-center">
+                  <div
+                      class="relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full p-4 hover:bg-slate-300 hover:bg-opacity-10 lg:hidden"
+                  >
+                      <!-- icono size-7 -->
+                  </div>
+                  <div
+                      class="items-row relative hidden cursor-pointer items-center gap-4 rounded-full p-4 hover:bg-slate-300 hover:bg-opacity-10 lg:flex"
+                  >
+                      <!-- icono size-6 -->
+                      <p class="hidden text-xl text-white lg:block">Inicio</p>
+                  </div>
+              </a>
+
+              <!-- Botón de cerrar sesión -->
+
+              <!-- Botón para publicar -->
+          </div>
+      </div>
+  </div>
+  ```
+
+- Componente `logo`
+
+
+  ```html
+  <svg
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+  >
+      <rect width="48" height="48" fill="transparent" />
+      <path
+          d="M8.99786 17.8433L39.9033 0L39.0844 12.6994L12.7638 27.8955L8.99786 17.8433Z"
+          fill="white"
+      />
+      <path
+          opacity="0.5"
+          d="M12.7637 27.8948L34.4994 15.3457L33.6805 28.0451L16.5296 37.9471L12.7637 27.8948Z"
+          fill="white"
+      />
+      <path
+          opacity="0.25"
+          d="M16.5273 37.9477L29.0933 30.6927L28.2744 43.3921L20.2933 48L16.5273 37.9477Z"
+          fill="white"
+      />
+  </svg>
+  ```
+
+- Icono `home`
+
+  ```html
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path
+          d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"
+      />
+      <path
+          d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"
+      />
+  </svg>
+  ```
+
+- Icono `user`
+
+  ```html
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path
+          fill-rule="evenodd"
+          d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+          clip-rule="evenodd"
+      />
+  </svg>
+  ```
+
+- Icono `logout`
+
+  ```html
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path
+          fill-rule="evenodd"
+          d="M16.5 3.75a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5V15a.75.75 0 0 0-1.5 0v3.75a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5.25a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3V9A.75.75 0 1 0 9 9V5.25a1.5 1.5 0 0 1 1.5-1.5h6ZM5.78 8.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 0 0 0 1.06l3 3a.75.75 0 0 0 1.06-1.06l-1.72-1.72H15a.75.75 0 0 0 0-1.5H4.06l1.72-1.72a.75.75 0 0 0 0-1.06Z"
+          clip-rule="evenodd"
+      />
+  </svg>
+  ```
+
+- Icono `feather`
+
+  ```html
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path
+          fill="currentColor"
+          d="M278.5 215.6L23 471c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l57-57 68 0c49.7 0 97.9-14.4 139-41c11.1-7.2 5.5-23-7.8-23c-5.1 0-9.2-4.1-9.2-9.2c0-4.1 2.7-7.6 6.5-8.8l81-24.3c2.5-.8 4.8-2.1 6.7-4l22.4-22.4c10.1-10.1 2.9-27.3-11.3-27.3l-32.2 0c-5.1 0-9.2-4.1-9.2-9.2c0-4.1 2.7-7.6 6.5-8.8l112-33.6c4-1.2 7.4-3.9 9.3-7.7C506.4 207.6 512 184.1 512 160c0-41-16.3-80.3-45.3-109.3l-5.5-5.5C432.3 16.3 393 0 352 0s-80.3 16.3-109.3 45.3L139 149C91 197 64 262.1 64 330l0 55.3L253.6 195.8c6.2-6.2 16.4-6.2 22.6 0c5.4 5.4 6.1 13.6 2.2 19.8z"
+      />
+  </svg>
+  ```
+
+- Botón de publicar
+
+  ```html
+  <a href="#" class="block w-full">
+      <div
+          class="mt-6 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-sky-500 p-4 transition hover:bg-opacity-80 lg:hidden"
+      >
+          <!-- Icono feather size-6 -->
+      </div>
+      <div class="mt-6 hidden cursor-pointer rounded-full bg-sky-500 px-4 py-2 hover:bg-opacity-90 lg:block">
+          <p class="hidden text-center text-[20px] font-semibold text-white lg:block">Publicar</p>
+      </div>
+  </a>
+  ```
+
 - Plugin de notificaciones
 
   ```html

@@ -16,9 +16,7 @@
         <div class="h-screen bg-black">
             <div class="xl:px-30 container mx-auto h-full max-w-6xl">
                 <div class="grid h-full grid-cols-4">
-                    <div>
-                        <!-- Sidebar -->
-                    </div>
+                    <livewire:sidebar />
                     <div class="col-span-3 border-x-[1px] border-neutral-800 lg:col-span-2">{{ $slot }}</div>
                     <div>
                         <!-- Seguir cuentas -->
