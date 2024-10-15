@@ -24,7 +24,20 @@
                 </div>
             </a>
 
-            <!-- Botón de cerrar sesión -->
+            <button class="flex flex-row items-center">
+                <div
+                    class="relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full p-4 hover:bg-slate-300 hover:bg-opacity-10 lg:hidden"
+                >
+                    <!-- icono size-7 -->
+                    <x-icon.logout class="size-7" />
+                </div>
+                <div
+                    class="items-row relative hidden cursor-pointer items-center gap-4 rounded-full p-4 hover:bg-slate-300 hover:bg-opacity-10 lg:flex"
+                >
+                    <x-icon.logout class="size-6" />
+                    <p class="hidden text-xl text-white lg:block">Cerrar sesión</p>
+                </div>
+            </button>
 
             <!-- Botón para publicar -->
         </div>
