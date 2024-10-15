@@ -1,3 +1,19 @@
+<?php
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
+$logout = function () {
+    Auth::guard('web')->logout();
+
+    Session::invalidate();
+    Session::regenerateToken();
+
+    return $this->redirect(route('home'), navigate: true);
+}
+
+?>
+
 <div class="col-span-1 h-full pr-4 md:pr-6">
     <div class="flex flex-col items-end">
         <div class="space-y-2 lg:w-[230px]">
