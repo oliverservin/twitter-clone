@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Notifications\PostLiked;
 
 use function Livewire\Volt\{state};
 
@@ -8,6 +9,10 @@ state(['post']);
 
 $toggleLike = function (Post $post) {
     auth()->user()->likedPosts()->toggle($post);
+
+    if ($post->likedBy->contains(auth()->user())) {
+        $post->user->notify(new PostLiked);
+    }
 
     $this->dispatch('toast', message: 'Éxito');
 }
