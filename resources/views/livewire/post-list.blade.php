@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Notifications\PostLiked;
 
 use function Livewire\Volt\on;
 use function Livewire\Volt\state;
