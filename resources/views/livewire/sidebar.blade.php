@@ -43,7 +43,7 @@ $logout = function () {
 
             @auth
 
-            <a href="{{ route('users.show', ['user' => auth()->user() ]) }}" wire:navigate class="flex flex-row items-center">
+            <a href="{{ route('notifications') }}" wire:navigate class="flex flex-row items-center">
                 <div
                     class="relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full p-4 hover:bg-slate-300 hover:bg-opacity-10 lg:hidden"
                 >
