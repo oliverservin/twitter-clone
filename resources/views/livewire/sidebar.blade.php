@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,25 @@ $logout = function () {
                     <p class="hidden text-xl text-white lg:block">Inicio</p>
                 </div>
             </a>
+
+            @auth
+
+            <a href="{{ route('users.show', ['user' => auth()->user() ]) }}" wire:navigate class="flex flex-row items-center">
+                <div
+                    class="relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full p-4 hover:bg-slate-300 hover:bg-opacity-10 lg:hidden"
+                >
+                    <!-- icono size-7 -->
+                    <x-icon.bell class="size-7" />
+                </div>
+                <div
+                    class="items-row relative hidden cursor-pointer items-center gap-4 rounded-full p-4 hover:bg-slate-300 hover:bg-opacity-10 lg:flex"
+                >
+                    <x-icon.bell class="size-6" />
+                    <p class="hidden text-xl text-white lg:block">Notificaciones</p>
+                </div>
+            </a>
+
+            @endauth
 
             @auth
                 <a href="{{ route('users.show', ['user' => auth()->user() ]) }}" wire:navigate class="flex flex-row items-center">
