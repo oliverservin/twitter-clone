@@ -37,7 +37,7 @@ class NewFollower extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            '¡Alguien ha comenzado a seguire!'
+            '¡Alguien ha comenzado a seguirte!'
         ];
     }
 }
