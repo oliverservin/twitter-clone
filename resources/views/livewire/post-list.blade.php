@@ -20,6 +20,10 @@ on(['post-created' => $getPosts]);
 $toggleLike = function (Post $post) {
     auth()->user()->likedPosts()->toggle($post);
 
+    if ($post->likedBy->contains(auth()->user())) {
+        $post->user->notify(new PostLiked);
+    }
+
     $this->getPosts();
 
     $this->dispatch('toast', message: 'Éxito');
