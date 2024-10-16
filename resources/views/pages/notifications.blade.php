@@ -8,4 +8,5 @@ name('notifications');
 
 <x-layouts.app>
     <x-header with-back-button>Notificaciones</x-header>
+    <livewire:notification-list />
 </x-layouts.app>
