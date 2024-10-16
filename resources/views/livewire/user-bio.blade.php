@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Notifications\NewFollower;
 use Livewire\WithFileUploads;
 
 use function Livewire\Volt\rules;
@@ -55,6 +56,10 @@ $updateUser = function () {
 
 $toggleFollow = function (User $user) {
     auth()->user()->following()->toggle($user);
+
+    if ($user->followers->contains(auth()->user())) {
+        $user->notify(new NewFollower);
+    }
 
     $this->getIsFollowing();
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Notifications\CommentAdded;
 use Illuminate\Support\Facades\Auth;
 
 use function Livewire\Volt\{rules, state};
@@ -22,6 +23,8 @@ $save = function () {
     $this->body = '';
 
     $this->dispatch('toast', message: 'Comentario enviado');
+
+    $this->post->user->notify(new CommentAdded);
 };
 
 ?>
